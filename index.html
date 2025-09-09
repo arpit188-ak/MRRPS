@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MEJOR RR PUBLIC SCHOOL</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f0f4f8; }
+    header { background:#00529b; color:#fff; padding:15px; text-align:center; font-size:24px; font-weight:bold; }
+    .login-banner { background:#003366; color:#fff; text-align:center; padding:10px; font-size:14px; font-style:italic; }
+    .container { max-width: 900px; margin: 20px auto; padding: 10px; background:#fff; box-shadow:0 0 10px rgba(0,0,0,0.1);}
+    h2 { color:#00529b; margin-bottom:10px; }
+    .dashboard { display: none; flex-wrap: wrap; gap: 15px; }
+    .card {
+      background:#e3f2fd; border-radius:8px; padding:15px; text-align:center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1); flex:1 1 calc(45% - 15px); cursor:pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover { transform: scale(1.05); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+    .highlight-card { background:#ff9800; color:#fff; font-weight:bold; }
+    input[type="text"], input[type="password"] {
+      width: 100%; padding: 8px; margin: 8px 0; border-radius: 4px; border: 1px solid #ccc;
+    }
+    button { background-color: #00529b; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 4px; }
+    button:hover { background-color: #003366; }
+    .form-section { display:none; opacity:0; transition:opacity 0.5s; }
+    .form-section.show { display:block; opacity:1; }
+    .logout-btn { margin-top:15px; background:#e53935; }
+    ol { padding-left:20px; }
+  </style>
+</head>
+<body>
+  <header>MEJOR RR PUBLIC SCHOOL</header>
+  <div class="login-banner">Design by @arp_it_8052</div>
+
+  <!-- Login Form -->
+  <main class="container">
+    <div class="form-section show" id="loginPage">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <input type="text" id="username" placeholder="Username" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="dashboard" id="dashboard">
+      <h2>Dashboard</h2>
+      <div class="card"><h3>Attendance</h3><p>Present/Absent status</p></div>
+      <div class="card"><h3>Holidays</h3><p>Upcoming holidays list</p></div>
+      <div class="card"><h3>Notes / Homework</h3><p>Class notes and homework</p></div>
+      <div class="card"><h3>Backbenchers List</h3><p>Students sitting at backbench</p></div>
+      <div class="card"><h3>Calls / Notifications</h3><p>Important calls and alerts</p></div>
+      <div class="card"><h3>Events Calendar</h3><p>School programs and events</p></div>
+
+      <!-- Highlighted Class 8th Card -->
+      <div class="card highlight-card" id="class8Card">
+        <h3>⭐ Class 8th Students</h3>
+        <p>Tap to view full list</p>
+      </div>
+
+      <!-- Teachers card -->
+      <div class="card" id="teachersCard">
+        <h3>👨‍🏫 Teachers</h3>
+        <p>Tap to view teachers & dialogs</p>
+      </div>
+    </div>
+
+    <!-- Class 8th Students Page -->
+    <div class="form-section" id="class8Page">
+      <h2>⭐ Class 8th Students</h2>
+
+      <h3>👩 Girls (13)</h3>
+      <ol>
+        <li>Ariska Khuswaha</li>
+        <li>Sanskriti Singh (Safed **)</li>
+        <li>Abhisha Singh (Kalli)</li>
+        <li>Princee</li>
+        <li>Malti</li>
+        <li>Ksmha</li>
+        <li>Kratika</li>
+        <li>Jyoti</li>
+        <li>Renu</li>
+        <li>Mannat</li>
+        <li>Rajni Patel</li>
+        <li>Ekta Patel</li>
+        <li>Anjali Yadav</li>
+      </ol>
+
+      <h3>👦 Boys (13)</h3>
+      <ol>
+        <li>Alok Raj</li>
+        <li>Sarvan Tiwari</li>
+        <li>Saurabh Tiwari</li>
+        <li>Pranshu Kushwaha</li>
+        <li>Adarsh Yadav / Singh / Tomar</li>
+        <li>Upendra Bhai</li>
+        <li>Bhanu Yadav</li>
+        <li>Devansh Patel / Singh (Debu Bhaiya G)</li>
+        <li>Ankit - Yadav 💪</li>
+        <li>Ravi Raj - Pandit ⚡</li>
+        <li>Arpit - Verma 🫂</li>
+        <li>Rudra - Singh 💵</li>
+        <li>Divyanshu Kushwaha</li>
+      </ol>
+
+      <p><b>Special Note:</b> Stupid boys and all teacher targets 🎯 (Bhai-chara wale lads) 💜🫂👥🎀</p>
+
+      <button class="logout-btn" id="backToDashboard">⬅ Back to Dashboard</button>
+    </div>
+
+    <!-- Teachers Page -->
+    <div class="form-section" id="teachersPage">
+      <h2>👨‍🏫 Teachers & Dialogs</h2>
+      <div>
+        <h3>Bipin Sir (S.S.T)</h3>
+        <p><b>Story:</b> WORK ROCK STAR</p>
+        <p><i>जब दिल टूटता है और भरोसा चकनाचूर हो जाता है...</i></p>
+      </div>
+      <div>
+        <h3>Shudhir Sir (Hindi G.)</h3>
+        <p><b>Story:</b> HOT BIWI BUDGA MAI</p>
+        <p><i>2 पाउआ रोज का काम मेरा रोज...</i></p>
+      </div>
+      <div>
+        <h3>Aditya Sir (Math)</h3>
+        <p><b>Story:</b> KAS KOI MAST GIRLFRIEND BAN JAYE...</p>
+        <p><i>पगली स्मार्ट तो माई बसंत से हु...</i></p>
+      </div>
+      <button class="logout-btn" id="backToDashboard2">⬅ Back to Dashboard</button>
+    </div>
+
+  </main>
+
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const loginPage = document.getElementById('loginPage');
+    const dashboard = document.getElementById('dashboard');
+    const class8Card = document.getElementById('class8Card');
+    const class8Page = document.getElementById('class8Page');
+    const teachersCard = document.getElementById('teachersCard');
+    const teachersPage = document.getElementById('teachersPage');
+    const backBtn = document.getElementById('backToDashboard');
+    const backBtn2 = document.getElementById('backToDashboard2');
+
+    const allowedUsers = [
+      // Girls
+      "Ariska","Sanskriti","Abhisha","Princee","Malti","Ksmha","Kratika","Jyoti","Renu","Mannat","Rajni","Ekta","Anjali",
+      // Boys
+      "Alok","Sarvan","Saurabh","Pranshu","Adarsh","Upendra","Bhanu","Devansh","Ankit","Ravi","Arpit","Rudra","Divyanshu",
+      // Teachers
+      "Bipin","Shudhir","Aditya"
+    ];
+
+    loginForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const user = document.getElementById('username').value.trim();
+      const pass = document.getElementById('password').value.trim();
+      if(allowedUsers.includes(user) && pass === "1234"){
+        loginPage.classList.remove('show');
+        setTimeout(()=>{
+          loginPage.style.display="none";
+          dashboard.style.display="flex";
+          setTimeout(()=>dashboard.classList.add('show'),50);
+        },400);
+      } else {
+        alert("Invalid username or password!");
+      }
+    });
+
+    // Class 8th Page
+    class8Card.addEventListener("click", () => {
+      dashboard.classList.remove("show");
+      setTimeout(()=>{
+        dashboard.style.display="none";
+        class8Page.style.display="block";
+        setTimeout(()=>class8Page.classList.add("show"),50);
+      },400);
+    });
+
+    backBtn.addEventListener("click", () => {
+      class8Page.classList.remove("show");
+      setTimeout(()=>{
+        class8Page.style.display="none";
+        dashboard.style.display="flex";
+        setTimeout(()=>dashboard.classList.add("show"),50);
+      },400);
+    });
+
+    // Teachers Page
+    teachersCard.addEventListener("click", () => {
+      dashboard.classList.remove("show");
+      setTimeout(()=>{
+        dashboard.style.display="none";
+        teachersPage.style.display="block";
+        setTimeout(()=>teachersPage.classList.add("show"),50);
+      },400);
+    });
+
+    backBtn2.addEventListener("click", () => {
+      teachersPage.classList.remove("show");
+      setTimeout(()=>{
+        teachersPage.style.display="none";
+        dashboard.style.display="flex";
+        setTimeout(()=>dashboard.classList.add("show"),50);
+      },400);
+    });
+  </script>
+</body>
+</html>
