@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MEJOR RR PUBLIC SCHOOL</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:Arial, sans-serif;background:#f0f4f8;}
+
+    /* Header */
+    header{
+      background:#00529b;color:#fff;padding:15px;
+      text-align:center;font-size:24px;font-weight:bold;
+    }
+    .login-banner{
+      background:#003366;color:#fff;text-align:center;
+      padding:10px;font-size:14px;font-style:italic;
+    }
+    .login-banner a{color:#ffcc00;text-decoration:none;font-weight:bold;}
+    .login-banner a:hover{color:#00e5ff;}
+
+    /* Container */
+    .container{
+      max-width:900px;margin:20px auto;padding:10px;
+      background:#fff;box-shadow:0 0 10px rgba(0,0,0,0.1);
+      border-radius:10px;
+    }
+    h2{color:#00529b;margin-bottom:10px;}
+    
+    /* Login Page */
+    #loginPage{
+      position:relative;height:100vh;display:flex;
+      flex-direction:column;align-items:center;justify-content:center;
+      background:#000;overflow:hidden;
+    }
+    #loginPage video{
+      position:absolute;top:0;left:0;width:100%;height:100%;
+      object-fit:cover;z-index:-1;opacity:0.7;
+    }
+    #loginForm{
+      background:rgba(255,255,255,0.9);padding:30px;
+      border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,0.3);
+      width:300px;text-align:center;
+      animation:fadeIn 1s ease-in-out;
+    }
+    #loginForm input{
+      width:100%;padding:10px;margin:10px 0;
+      border-radius:6px;border:1px solid #ccc;
+    }
+    #loginForm button{
+      width:100%;padding:12px;background:#00529b;color:#fff;
+      border:none;border-radius:6px;cursor:pointer;
+      font-size:16px;transition:0.3s;
+    }
+    #loginForm button:hover{background:#003366;}
+
+    /* Dashboard */
+    #dashboard{display:none;flex-wrap:wrap;gap:15px;}
+    .card{
+      background:#e3f2fd;border-radius:8px;padding:15px;text-align:center;
+      box-shadow:0 2px 5px rgba(0,0,0,0.1);flex:1 1 calc(45% - 15px);
+      cursor:pointer;transition:0.3s;
+    }
+    .card:hover{transform:scale(1.05);box-shadow:0 4px 12px rgba(0,0,0,0.2);}
+    .highlight-card{background:#ff9800;color:#fff;font-weight:bold;}
+
+    /* Profile */
+    .profile{
+      display:flex;align-items:center;gap:10px;
+      margin-bottom:15px;padding:10px;background:#f5f5f5;
+      border-radius:8px;
+    }
+    .profile img{width:50px;height:50px;border-radius:50%;}
+
+    /* Buttons */
+    .logout-btn{
+      margin-top:15px;background:#e53935;color:#fff;
+      padding:10px 20px;border:none;border-radius:6px;cursor:pointer;
+    }
+    .back-btn{
+      margin-top:15px;background:#1976d2;color:#fff;
+      padding:10px 20px;border:none;border-radius:6px;cursor:pointer;
+    }
+
+    /* Music Button */
+    #musicBtn{
+      position:fixed;bottom:20px;right:20px;width:50px;height:50px;
+      border-radius:50%;background:linear-gradient(135deg,#ff512f,#dd2476,#24c6dc);
+      border:none;color:#fff;font-size:20px;display:flex;
+      align-items:center;justify-content:center;
+      box-shadow:0 4px 12px rgba(0,0,0,0.4);cursor:pointer;
+      z-index:999;transition:0.3s;
+    }
+    #musicBtn:hover{transform:scale(1.2);}
+    
+    @keyframes fadeIn{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
+  </style>
+</head>
+<body>
+  <header>MEJOR RR PUBLIC SCHOOL</header>
+  <div class="login-banner">
+    Design by <a href="https://instagram.com/arp_it_8052" target="_blank">@arp_it_8052</a> | 
+    <a href="mailto:arpitkumar6716@gmail.com">✉️ Email Me</a>
+  </div>
+
+  <!-- Login Page -->
+  <div id="loginPage">
+    <video autoplay muted loop>
+      <source src="https://videos.pexels.com/video-files/6325480/6325480-uhd_2560_1440_25fps.mp4" type="video/mp4">
+    </video>
+    <form id="loginForm">
+      <h2>Login</h2>
+      <input type="text" id="username" placeholder="Username" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <!-- Dashboard -->
+  <main class="container" id="dashboard">
+    <div class="profile">
+      <img id="profilePic" src="" alt="Profile">
+      <span id="profileName"></span>
+    </div>
+    <h2>Dashboard</h2>
+    <div class="card"><h3>Attendance</h3><p>Present/Absent status</p></div>
+    <div class="card"><h3>Holidays</h3><p>Upcoming holidays list</p></div>
+    <div class="card"><h3>Notes / Homework</h3><p>Class notes and homework</p></div>
+    <div class="card"><h3>Backbenchers List</h3><p>Students sitting at backbench</p></div>
+    <div class="card"><h3>Calls / Notifications</h3><p>Important calls and alerts</p></div>
+    <div class="card"><h3>Events Calendar</h3><p>School programs and events</p></div>
+    <div class="card highlight-card" id="class8Card"><h3>⭐ Class 8th Students</h3><p>Tap to view full list</p></div>
+    <div class="card" id="teachersCard"><h3>👨‍🏫 Teachers</h3><p>Tap to view teachers & dialogs</p></div>
+    <button class="logout-btn" id="logoutBtn">🚪 Logout</button>
+  </main>
+
+  <!-- Class 8th Students Page -->
+  <div class="container form-section" id="class8Page" style="display:none;">
+    <h2>⭐ Class 8th Students</h2>
+    <h3>👩 Girls (11)</h3>
+    <ol>
+      <li>Ariska Khuswaha</li>
+      <li>Sanskriti</li>
+      <li>Abhisha Singh</li>
+      <li>Princee</li>
+      <li>Ksmha</li>
+      <li>Kratika</li>
+      <li>Jyoti</li>
+      <li>Renu</li>
+      <li>Mannat</li>
+      <li>Rajni Patel</li>
+      <li>Anjali Yadav</li>
+    </ol>
+    <h3>👦 Boys (19)</h3>
+    <ol>
+      <li>Vikhyat .monitor 👤</li>
+      <li>Sikhar .absent paglu 🥶</li>
+      <li>Praveen .so called gunda 🔫</li>
+      <li>Mohit .silent 🤐</li>
+      <li>Deepak .black beauty 😍</li>
+      <li>Anmol .girl's favourite 🎀</li>
+      <li>Adarsh .chuglikhor 😁</li>
+      <li>Divyanshu .sanki 😡</li>
+      <li>Saurabh .teacher's favourite 🥴</li>
+      <li>Shravan .hero 🤔😎</li>
+      <li>Bhanu .bhanu bodmosh 🤙🏻</li>
+      <li>Priyanshu .kachhi Bhai 👍🏻</li>
+      <li>Upendra .baikal + comedy 😂</li>
+      <li>Ankit .power🔱+teacher's🎯+💔👉🏻❤️‍🩹</li>
+      <li>Ravi .Bakchod 👏🏻 + teacher's 🎯</li>
+      <li>Amit .judgement King 👑</li>
+      <li>Arpit .Bunk Paglu🎀+fielding setter😶‍🌫️</li>
+      <li>Devansh .debu bhaiya ☠️</li>
+      <li>Rudra .Baba jese + sny paglu 🥲</li>
+    </ol>
+    <button class="back-btn" id="backBtn1">⬅ Back</button>
+  </div>
+
+  <!-- Teachers Page -->
+  <div class="container form-section" id="teachersPage" style="display:none;">
+    <h2>👨‍🏫 Teachers & Dialogs</h2>
+    <div><h3>Bipin Sir (S.S.T)</h3><p><b>Story:</b> WORK ROCK STAR</p></div>
+    <div><h3>Shudhir Sir (Hindi G.)</h3><p><b>Story:</b> HOT BIWI BUDGA MAI</p></div>
+    <div><h3>Aditya Sir (Math)</h3><p><b>Story:</b> KAS KOI MAST GIRLFRIEND BAN JAYE...</p></div>
+    <button class="back-btn" id="backBtn2">⬅ Back</button>
+  </div>
+
+  <!-- Music -->
+  <button id="musicBtn"><i class="fas fa-music"></i></button>
+  <audio id="bgMusic" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const loginPage = document.getElementById('loginPage');
+    const dashboard = document.getElementById('dashboard');
+    const class8Card = document.getElementById('class8Card');
+    const class8Page = document.getElementById('class8Page');
+    const teachersCard = document.getElementById('teachersCard');
+    const teachersPage = document.getElementById('teachersPage');
+    const profilePic = document.getElementById('profilePic');
+    const profileName = document.getElementById('profileName');
+    const logoutBtn = document.getElementById('logoutBtn');
+    const backBtn1 = document.getElementById('backBtn1');
+    const backBtn2 = document.getElementById('backBtn2');
+    const musicBtn = document.getElementById('musicBtn');
+    const bgMusic = document.getElementById('bgMusic');
+
+    const profileImages = {
+      "Ariska":"https://i.ibb.co/7n0m2PR/student.png",
+      "Sanskriti":"https://i.ibb.co/7n0m2PR/student.png",
+      "Abhisha":"https://i.ibb.co/7n0m2PR/student.png",
+      "Princee":"https://i.ibb.co/7n0m2PR/student.png",
+      "Vikhyat":"https://i.ibb.co/QN6q2tM/teacher.png",
+      "Arpit":"https://i.ibb.co/QN6q2tM/teacher.png"
+    };
+
+    // LOGIN
+    loginForm.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      let user = document.getElementById('username').value.trim();
+      let pass = document.getElementById('password').value.trim();
+      let correctPass = user.toLowerCase() + "188";
+      if(pass === correctPass){
+        loginPage.style.display = "none";
+        dashboard.style.display = "flex";
+        profileName.textContent = user;
+        profilePic.src = profileImages[user] || "https://i.ibb.co/7n0m2PR/student.png";
+        bgMusic.play().catch(()=>{});
+      } else {
+        alert("❌ Invalid Username or Password!");
+      }
+    });
+
+    // LOGOUT
+    logoutBtn.addEventListener('click', ()=>{
+      dashboard.style.display = "none";
+      class8Page.style.display = "none";
+      teachersPage.style.display = "none";
+      loginPage.style.display = "flex";
+      bgMusic.pause();
+      bgMusic.currentTime = 0;
+    });
+
+    // CLASS 8 PAGE
+    class8Card.addEventListener('click', ()=>{
+      dashboard.style.display = "none";
+      class8Page.style.display = "block";
+    });
+    backBtn1.addEventListener('click', ()=>{
+      class8Page.style.display = "none";
+      dashboard.style.display = "flex";
+    });
+
+    // TEACHERS PAGE
+    teachersCard.addEventListener('click', ()=>{
+      dashboard.style.display = "none";
+      teachersPage.style.display = "block";
+    });
+    backBtn2.addEventListener('click', ()=>{
+      teachersPage.style.display = "none";
+      dashboard.style.display = "flex";
+    });
+
+    // MUSIC CONTROL
+    let musicPlaying = false;
+    musicBtn.addEventListener('click', ()=>{
+      if(musicPlaying){
+        bgMusic.pause();
+        musicBtn.innerHTML = '<i class="fas fa-music"></i>';
+      } else {
+        bgMusic.play();
+        musicBtn.innerHTML = '<i class="fas fa-pause"></i>';
+      }
+      musicPlaying = !musicPlaying;
+    });
+  </script>
+</body>
+</html>
